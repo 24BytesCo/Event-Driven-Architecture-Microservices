@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  mongodb:
+    image: mongo:7.0  # Especifica la imagen de MongoDB versión 7.0
+    container_name: mongodb # Nombre del contenedor
+    command: ["--replSet", "rs0", "--bind_ip_all", "--port", "27017"] # Comando para iniciar MongoDB como un conjunto réplica (replica set) llamado 'rs0', escuchando en todas las interfaces y el puerto 27017
+    ports:
+      - 27017:27017 # Mapea el puerto 27017 del contenedor al puerto 27017 del host
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # Permite la resolución del nombre de host.docker.internal dentro del contenedor, útil para acceder al host desde Docker Desktop
+    healthcheck: # Define un chequeo de salud para el contenedor de MongoDB
+      test: echo "try { rs.status() } catch(e) { rs.initiate({ _id:'rs0', members:[{_id:0,host:'host.docker.internal:27017'}]})}" | mongosh --port 27017 --quiet # Comando para verificar el estado del replica set. Si no está inicializado, lo inicializa.
+      interval: 5s # Intervalo entre chequeos
+      timeout: 30s # Tiempo máximo permitido para el chequeo
+      start_period: 0s # Tiempo que espera antes de iniciar el primer chequeo
+      start_interval: 1s # Intervalo entre chequeos durante el período de inicio
+      retries: 30 # Número máximo de reintentos
+    volumes:
+      - mongodb_data:/data/db # Monta el volumen 'mongodb_data' en /data/db dentro del contenedor (datos de la base de datos)
+      - mongodb_config:/data/configdb # Monta el volumen 'mongodb_config' en /data/configdb dentro del contenedor (datos de configuración)
+
+volumes:
+  mongodb_data: # Define el volumen 'mongodb_data'
+    driver: local # Utiliza el driver local (almacenamiento en el host)
+  mongodb_config: # Define el volumen 'mongodb_config'
+    driver: local # Utiliza el driver local (almacenamiento en el host)
+
+networks:
+  default: # Define la red 'default'
+    name: event-driven-arquitecture_network # Nombre de la red. Esto permite que los contenedores se comuniquen entre sí usando este nombre de red.
