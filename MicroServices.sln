@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Command", "Projec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Query", "Projects\Ticketing.Query\Ticketing.Query.csproj", "{FFC399BF-6075-4D57-8216-904CF734F566}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4147CB8C-8CD1-433C-A661-897FB01D610B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Core", "Common\Common.Core\Common.Core.csproj", "{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{FFC399BF-6075-4D57-8216-904CF734F566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC399BF-6075-4D57-8216-904CF734F566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC399BF-6075-4D57-8216-904CF734F566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6E223A03-9559-40B7-995C-966493BEE271} = {4929E009-3A14-47E7-8546-5FFAC32766A6}
 		{FFC399BF-6075-4D57-8216-904CF734F566} = {4929E009-3A14-47E7-8546-5FFAC32766A6}
+		{35029A7B-6AE7-4BFD-98EC-B21DDD808CB4} = {4147CB8C-8CD1-433C-A661-897FB01D610B}
 	EndGlobalSection
 EndGlobal
