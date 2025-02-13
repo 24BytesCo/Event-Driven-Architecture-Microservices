@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{4929E009-3A14-47E7-8546-5FFAC32766A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Command", "Projects\Ticketing.Command\Ticketing.Command.csproj", "{6E223A03-9559-40B7-995C-966493BEE271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketing.Query", "Projects\Ticketing.Query\Ticketing.Query.csproj", "{FFC399BF-6075-4D57-8216-904CF734F566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E223A03-9559-40B7-995C-966493BEE271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E223A03-9559-40B7-995C-966493BEE271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E223A03-9559-40B7-995C-966493BEE271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E223A03-9559-40B7-995C-966493BEE271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC399BF-6075-4D57-8216-904CF734F566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC399BF-6075-4D57-8216-904CF734F566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC399BF-6075-4D57-8216-904CF734F566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC399BF-6075-4D57-8216-904CF734F566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E223A03-9559-40B7-995C-966493BEE271} = {4929E009-3A14-47E7-8546-5FFAC32766A6}
+		{FFC399BF-6075-4D57-8216-904CF734F566} = {4929E009-3A14-47E7-8546-5FFAC32766A6}
+	EndGlobalSection
+EndGlobal
