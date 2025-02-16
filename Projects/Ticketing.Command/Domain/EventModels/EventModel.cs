@@ -2,7 +2,7 @@ using Common.Core.Events;
 using MongoDB.Bson.Serialization.Attributes;
 using Ticketing.Command.Domain.Common;
 
-namespace Ticketing.Command.Domain
+namespace Ticketing.Command.Domain.EventModels
 {
     /// <summary>
     /// Modelo base para representar un evento en el sistema.
