@@ -1,3 +1,4 @@
+using Common.Core.Events;
 using MongoDB.Bson.Serialization.Attributes;
 using Ticketing.Command.Domain.Common;
 
@@ -26,7 +27,7 @@ namespace Ticketing.Command.Domain
         /// Tipo del agregado al que pertenece este evento.
         /// </summary>
         [BsonElement("aggregateType")] // Especifica el nombre del campo en el documento MongoDB.
-        public string AggregateType { get; set; } = string.Empty; // Valor predeterminado vacío.
+        public string AggregateType { get; set; } = string.Empty;
 
         /// <summary>
         /// Versión del evento. Se utiliza para el control de concurrencia y el ordenamiento de eventos.
@@ -38,6 +39,12 @@ namespace Ticketing.Command.Domain
         /// Tipo específico del evento.  Describe la acción que ocurrió (ej: "TicketCreated", "TicketAssigned").
         /// </summary>
         [BsonElement("eventType")] // Especifica el nombre del campo en el documento MongoDB.
-        public string EventType { get; set; } = string.Empty; // Valor predeterminado vacío.
+        public string EventType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Datos específicos del evento.
+        /// </summary>
+        public BaseEvent? EventData { get; set; }  // Propiedad de tipo BaseEvent, que contiene los datos específicos del evento.
+        
     }
 }
